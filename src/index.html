@@ -6,5 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
   </head>
-  <body></body>
+  <body class="body">
+    <main>
+      <div class="page-wrap">
+        <section class="calculator">
+          <section class="calculator-module interface">
+            <section class="interface__screen">
+              <input class="interface__screen__input" type="text" placeholder="Math here" />
+            </section>
+          </section>
+          <section class="calculator-module keyboard">
+            <section class="keyboard__group calculation">
+              <button class="keyboard__group__button calculation__button calculation__enter">enter</button>
+              <button class="keyboard__group__button calculation__button calculation__clear">clear</button>
+            </section>
+            <section class="keyboard__group operation">
+              <button class="keyboard__group__button operation__button operation__eight">8</button>
+              <button class="keyboard__group__button operation__button operation__seven">7</button>
+              <button class="keyboard__group__button operation__button operation__nine">9</button>
+              <button class="keyboard__group__button operation__button operation__operator operation__divide">&#247;</button>
+              <button class="keyboard__group__button operation__button operation__four">4</button>
+              <button class="keyboard__group__button operation__button operation__five">5</button>
+              <button class="keyboard__group__button operation__button operation__six">6</button>
+              <button class="keyboard__group__button operation__button operation__operator operation__multiply">&#10799;</button>
+              <button class="keyboard__group__button operation__button operation__one">1</button>
+              <button class="keyboard__group__button operation__button operation__two">2</button>
+              <button class="keyboard__group__button operation__button operation__three">3</button>
+              <button class="keyboard__group__button operation__button operation__operator operation__subtract">&#8722;</button>
+              <button class="keyboard__group__button operation__button operation__zero">0</button>
+              <button class="keyboard__group__button operation__button operation__posneg">(&#8722;)</button>
+              <button class="keyboard__group__button operation__button operation__decimal">.</button>
+              <button class="keyboard__group__button operation__button operation__operator operation__add">&#43;</button>
+            </section>
+          </section>
+        </section>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
 </html>

@@ -1,0 +1,308 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+:root {
+  font-size: 16px;
+  --calculatorColor: hsl(0, 0%, 50%);
+  --enterColor: hsl(106, 100%, 37%);
+  --clearColor: hsl(17, 100%, 42%);
+  --operationColor: hsl(0, 0%, 96%);
+  --operatorColor: hsl(36, 100%, 44%);
+  --white: hsl(9, 100%, 99%);
+  --black: hsl(224, 41%, 5%);
+  --headingFont: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --codeFont: "Courier New", Courier, monospace;
+  --keyFontSize: 2em;
+  --borderRadius: 5px;
+  --calcBoxShadow: inset 0 1px 3px hsl(224, 41%, 5%);
+  --boxShadow: 0 1px 3px hsl(0, 0%, 20%);
+  --hoverBoxShadow: 0 2px 4px hsl(0, 0%, 20%);
+  --tenPxFont: 0.625rem;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.body {
+  background: hsl(224, 41%, 5%);
+  background: var(--black);
+}
+
+.calculator {
+  background: hsl(0, 0%, 50%);
+  background: var(--calculatorColor);
+  font-size: 0.625rem;
+  font-size: var(--tenPxFont);
+  box-shadow: inset 0 1px 3px hsl(224, 41%, 5%);
+  box-shadow: var(--calcBoxShadow);
+}
+
+.interface__screen__input {
+  box-shadow: 0 1px 3px hsl(0, 0%, 20%);
+  box-shadow: var(--boxShadow);
+  direction: rtl;
+}
+.interface__screen__input:hover {
+  box-shadow: 0 1px 4px white;
+}
+.interface__screen__input:focus {
+  box-shadow: none;
+  outline: 2px solid gold;
+}
+
+.keyboard__group__button {
+  background-color: var(white);
+  box-shadow: 0 1px 3px hsl(0, 0%, 20%);
+  box-shadow: var(--boxShadow);
+}
+.keyboard__group__button:hover {
+  color: hsl(9, 100%, 99%);
+  color: var(--white);
+}
+.keyboard__group__button:active {
+  transform: translateY(1.5px);
+}
+
+.calculation__button {
+  font-size: 2em;
+  font-size: var(--keyFontSize);
+}
+.calculation__enter {
+  background: hsl(106, 100%, 37%);
+  background: var(--enterColor);
+}
+.calculation__enter:hover {
+  background: rgba(44, 189, 0, 0.85);
+  box-shadow: 0 2px 4px hsl(0, 0%, 20%);
+  box-shadow: var(--hoverBoxShadow);
+}
+.calculation__enter:active {
+  background: rgba(44, 189, 0, 0.7);
+}
+.calculation__clear {
+  background-color: hsl(17, 100%, 42%);
+  background-color: var(--clearColor);
+}
+.calculation__clear:hover {
+  background: rgba(214, 61, 0, 0.9);
+  box-shadow: 0 2px 4px hsl(0, 0%, 20%);
+  box-shadow: var(--hoverBoxShadow);
+}
+.calculation__clear:active {
+  background: rgba(214, 61, 0, 0.8);
+}
+
+.operation__button {
+  background: hsl(0, 0%, 96%);
+  background: var(--operationColor);
+  font-size: 2em;
+  font-size: var(--keyFontSize);
+}
+.operation__button:hover {
+  background: rgba(0, 192, 250, 0.8);
+  box-shadow: 0 2px 4px hsl(0, 0%, 20%);
+  box-shadow: var(--hoverBoxShadow);
+}
+.operation__button:active {
+  background: rgba(0, 192, 250, 0.68);
+}
+.operation__operator {
+  background: hsl(36, 100%, 44%);
+  background: var(--operatorColor);
+  font-weight: 600;
+}
+.operation__operator:hover {
+  background: rgba(224, 135, 0, 0.9);
+}
+.operation__operator:active {
+  background: rgba(224, 135, 0, 0.8);
+}
+
+.interface__screen__input {
+  font-size: 2em;
+}
+.body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.calculator {
+  border-radius: var(--borderRadius);
+  width: 25rem;
+  padding: 1rem;
+}
+
+.interface__screen {
+  width: 100%;
+}
+.interface__screen__input {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+}
+.keyboard__group__button {
+  border: none;
+  border-radius: var(--borderRadius);
+}
+.keyboard__group__button:hover {
+  cursor: pointer;
+}
+
+.calculation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.calculation__enter {
+  padding: 0.5rem calc(3rem - 2.01px);
+}
+.calculation__clear {
+  padding: 0.5rem 3rem;
+}
+
+.operation {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  gap: 15px;
+}
+.operation__button {
+  padding: 0.25rem 2rem;
+}
+.operation__posneg {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -1,0 +1,70 @@
+.body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.calculator {
+  border-radius: var(--borderRadius);
+  width: 25rem;
+  padding: 1rem;
+}
+
+.interface {
+  &__screen {
+    width: 100%;
+    &__input {
+      border: none;
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  &__group {
+    &__button {
+      border: none;
+      border-radius: var(--borderRadius);
+    }
+    &__button:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.calculation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  &__enter {
+    padding: 0.5rem calc(3rem - 2.01px);
+  }
+  &__clear {
+    padding: 0.5rem 3rem;
+  }
+}
+
+.operation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  &__button {
+    padding: 0.25rem 2rem;
+  }
+  &__posneg {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

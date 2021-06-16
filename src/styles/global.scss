@@ -1,0 +1,128 @@
+:root {
+  font-size: 16px;
+  --calculatorColor: hsl(0, 0%, 50%);
+  --enterColor: hsl(106, 100%, 37%);
+  --clearColor: hsl(17, 100%, 42%);
+  --operationColor: hsl(0, 0%, 96%);
+  --operatorColor: hsl(36, 100%, 44%);
+  --white: hsl(9, 100%, 99%);
+  --black: hsl(224, 41%, 5%);
+  --headingFont: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --codeFont: 'Courier New', Courier, monospace;
+  --keyFontSize: 2em;
+  --borderRadius: 5px;
+  --calcBoxShadow: inset 0 1px 3px hsl(224, 41%, 5%);
+  --boxShadow: 0 1px 3px hsl(0, 0%, 20%);
+  --hoverBoxShadow: 0 2px 4px hsl(0, 0%, 20%);
+  --tenPxFont: 0.625rem;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.body {
+  background: var(--black);
+}
+
+.calculator {
+  background: var(--calculatorColor);
+  font-size: var(--tenPxFont);
+  box-shadow: var(--calcBoxShadow);
+}
+
+.interface {
+  &__screen {
+    &__input {
+      box-shadow: var(--boxShadow);
+      direction: rtl;
+    }
+    &__input:hover {
+      box-shadow: 0 1px 4px white;
+    }
+    &__input:focus {
+      box-shadow: none;
+      outline: 2px solid gold;
+    }
+  }
+}
+
+.keyboard {
+  &__group {
+    &__button {
+      background-color: var(white);
+      box-shadow: var(--boxShadow);
+      &:hover {
+        color: var(--white);
+      }
+      &:active {
+        transform: translateY(1.5px);
+      }
+    }
+  }
+}
+
+.calculation {
+  &__button {
+    font-size: var(--keyFontSize);
+  }
+  &__enter {
+    background: var(--enterColor);
+    &:hover {
+      background: hsla(106, 100%, 37%, 0.85);
+      box-shadow: var(--hoverBoxShadow);
+    }
+    &:active {
+      background: hsla(106, 100%, 37%, 0.7);
+    }
+  }
+  &__clear {
+    background-color: var(--clearColor);
+    &:hover {
+      background: hsla(17, 100%, 42%, 0.9);
+      box-shadow: var(--hoverBoxShadow);
+    }
+    &:active {
+      background: hsla(17, 100%, 42%, 0.8);
+    }
+  }
+}
+
+.operation {
+  &__button {
+    background: var(--operationColor);
+    font-size: var(--keyFontSize);
+    &:hover {
+      background: hsla(194, 100%, 49%, 0.8);
+      box-shadow: var(--hoverBoxShadow);
+    }
+    &:active {
+      background: hsla(194, 100%, 49%, 0.68);
+    }
+  }
+  &__operator {
+    background: var(--operatorColor);
+    font-weight: 600;
+    &:hover {
+      background: hsla(36, 100%, 44%, 0.9);
+    }
+    &:active {
+      background: hsla(36, 100%, 44%, 0.8);
+    }
+  }
+}
+
+.interface {
+  &__screen {
+    &__input {
+      font-size: 2em;
+    }
+  }
+}
