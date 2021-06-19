@@ -12,31 +12,31 @@
         <section class="calculator">
           <section class="calculator-module interface">
             <section class="interface__screen">
-              <input class="interface__screen__input" type="text" placeholder="Math here" />
+              <div data-screen="screen" class="interface__screen__input"></div>
             </section>
           </section>
           <section class="calculator-module keyboard">
             <section class="keyboard__group calculation">
-              <button class="keyboard__group__button calculation__button calculation__enter">enter</button>
-              <button class="keyboard__group__button calculation__button calculation__clear">clear</button>
+              <button class="keyboard__group__button calculation__button calculation__enter">&#61;</button>
+              <button class="keyboard__group__button calculation__button calculation__clear">C</button>
             </section>
             <section class="keyboard__group operation">
-              <button class="keyboard__group__button operation__button operation__eight">8</button>
-              <button class="keyboard__group__button operation__button operation__seven">7</button>
-              <button class="keyboard__group__button operation__button operation__nine">9</button>
-              <button class="keyboard__group__button operation__button operation__operator operation__divide">&#247;</button>
-              <button class="keyboard__group__button operation__button operation__four">4</button>
-              <button class="keyboard__group__button operation__button operation__five">5</button>
-              <button class="keyboard__group__button operation__button operation__six">6</button>
-              <button class="keyboard__group__button operation__button operation__operator operation__multiply">&#10799;</button>
-              <button class="keyboard__group__button operation__button operation__one">1</button>
-              <button class="keyboard__group__button operation__button operation__two">2</button>
-              <button class="keyboard__group__button operation__button operation__three">3</button>
-              <button class="keyboard__group__button operation__button operation__operator operation__subtract">&#8722;</button>
-              <button class="keyboard__group__button operation__button operation__zero">0</button>
-              <button class="keyboard__group__button operation__button operation__posneg">(&#8722;)</button>
+              <button data-key="7" class="keyboard__group__button operation__button operation__operand">7</button>
+              <button data-key="8" class="keyboard__group__button operation__button operation__operand">8</button>
+              <button data-key="9" class="keyboard__group__button operation__button operation__operand">9</button>
+              <button data-operator="/" class="keyboard__group__button operation__button operation__operator">&#247;</button>
+              <button data-key="4" class="keyboard__group__button operation__button operation__operand">4</button>
+              <button data-key="5" class="keyboard__group__button operation__button operation__operand">5</button>
+              <button data-key="6" class="keyboard__group__button operation__button operation__operand">6</button>
+              <button data-operator="*" class="keyboard__group__button operation__button operation__operator">&#10799;</button>
+              <button data-key="1" class="keyboard__group__button operation__button operation__operand">1</button>
+              <button data-key="2" class="keyboard__group__button operation__button operation__operand">2</button>
+              <button data-key="3" class="keyboard__group__button operation__button operation__operand">3</button>
+              <button data-operator="-" class="keyboard__group__button operation__button operation__operator">&#8722;</button>
+              <button data-key="0" class="keyboard__group__button operation__button operation__operand">0</button>
+              <button class="keyboard__group__button operation__button operation__posneg">&#43;/&#8722;</button>
               <button class="keyboard__group__button operation__button operation__decimal">.</button>
-              <button class="keyboard__group__button operation__button operation__operator operation__add">&#43;</button>
+              <button data-operator="+" class="keyboard__group__button operation__button operation__operator">&#43;</button>
             </section>
           </section>
         </section>

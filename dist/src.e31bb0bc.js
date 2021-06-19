@@ -208,41 +208,121 @@ require("./styles/global.scss");
 
 require("./styles/main.scss");
 
-var op = '+';
-var x = '10';
-var y = '5';
-operate(op, x, y);
+var operandButtons = document.querySelectorAll('.operation__operand');
+var operatorButtons = document.querySelectorAll('.operation__operator');
+var inputScreen = document.querySelector('.interface__screen__input');
+var enterButton = document.querySelector('.calculation__enter');
+var clearButton = document.querySelector('.calculation__clear');
+var posNegButton = document.querySelector('.operation__posneg');
+var decimalButton = document.querySelector('.operation__decimal');
+var operandOne = '';
+var operandTwo = '';
+var currentOperator = null;
+var resetController = false;
+operandButtons.forEach(function (operandButton) {
+  operandButton.addEventListener('click', function (e) {
+    setOperandOne(e.target.dataset.key);
+  });
+});
+operatorButtons.forEach(function (operatorButton) {
+  operatorButton.addEventListener('click', function (e) {
+    setOperation(e.target.dataset.operator);
+  });
+});
+enterButton.addEventListener('click', evaluate);
+clearButton.addEventListener('click', function () {
+  resetValues();
+  clearScreen();
+});
+posNegButton.addEventListener('click', function () {
+  inputScreen.textContent = posNeg(inputScreen.textContent);
+});
+decimalButton.addEventListener('click', decimal);
 
-function add(numOne, numTwo) {
-  return numOne + numTwo;
+function setOperandOne(operandValue) {
+  if (resetController === true) clearScreen();
+  inputScreen.textContent += operandValue;
 }
 
-function subtract(numOne, numTwo) {
-  return numOne - numTwo;
+function setOperation(operator) {
+  if (currentOperator !== null) evaluate();
+  operandOne = inputScreen.textContent;
+  currentOperator = operator;
+  resetController = true;
 }
 
-function multiply(numOne, numTwo) {
-  return numOne * numTwo;
-}
+function evaluate() {
+  if (currentOperator === null) return;
 
-function divide(numOne, numTwo) {
-  return numOne / numTwo;
+  if (currentOperator == '/' && inputScreen.textContent == '0') {
+    resetValues();
+    clearScreen();
+    alert("You can't handle infinity. Try again.");
+  }
+
+  operandTwo = inputScreen.textContent;
+  inputScreen.textContent = round(operate(currentOperator, operandOne, operandTwo));
+  resetValues();
+  resetController = true;
 }
 
 function operate(operator, numOne, numTwo) {
   switch (operator) {
     case '+':
-      console.log(add(+numOne, +numTwo));
+      return add(numOne, numTwo);
 
     case '-':
-      console.log(subtract(+numOne, +numTwo));
+      return subtract(numOne, numTwo);
 
     case '*':
-      console.log(multiply(+numOne, +numTwo));
+      return multiply(numOne, numTwo);
 
     case '/':
-      console.log(divide(+numOne, +numTwo));
+      return divide(numOne, numTwo);
+
+    default:
+      return null;
   }
+}
+
+function add(numOne, numTwo) {
+  return +numOne + +numTwo;
+}
+
+function subtract(numOne, numTwo) {
+  return +numOne - +numTwo;
+}
+
+function multiply(numOne, numTwo) {
+  return +numOne * +numTwo;
+}
+
+function divide(numOne, numTwo) {
+  return +numOne / +numTwo;
+}
+
+function round(number) {
+  return Math.round(number * 100) / 100;
+}
+
+function resetValues() {
+  operandOne = '';
+  operandTwo = '';
+  currentOperator = null;
+}
+
+function clearScreen() {
+  inputScreen.textContent = '';
+  resetController = false;
+}
+
+function posNeg(number) {
+  return number * -1;
+}
+
+function decimal() {
+  if (inputScreen.textContent.includes('.')) return;
+  inputScreen.textContent += '.';
 }
 },{"./styles/reset.scss":"styles/reset.scss","./styles/global.scss":"styles/global.scss","./styles/main.scss":"styles/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

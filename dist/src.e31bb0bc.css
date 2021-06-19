@@ -108,7 +108,7 @@ q {
   quotes: "" "";
 }
 :root {
-  font-size: 16px;
+  font-size: 20px;
   --calculatorColor: hsl(0, 0%, 50%);
   --enterColor: hsl(106, 100%, 37%);
   --clearColor: hsl(17, 100%, 42%);
@@ -152,20 +152,20 @@ html {
 }
 
 .interface__screen__input {
+  background: hsl(9, 100%, 99%);
+  background: var(--white);
   box-shadow: 0 1px 3px hsl(0, 0%, 20%);
   box-shadow: var(--boxShadow);
-  direction: rtl;
-}
-.interface__screen__input:hover {
-  box-shadow: 0 1px 4px white;
-}
-.interface__screen__input:focus {
-  box-shadow: none;
-  outline: 2px solid gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 3em;
 }
 
 .keyboard__group__button {
-  background-color: var(white);
+  background: hsl(9, 100%, 99%);
+  background: var(--white);
   box-shadow: 0 1px 3px hsl(0, 0%, 20%);
   box-shadow: var(--boxShadow);
 }
@@ -246,13 +246,14 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100vh;
   padding: 2rem;
 }
 
 .calculator {
   border-radius: var(--borderRadius);
   width: 25rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .interface__screen {
@@ -282,23 +283,100 @@ html {
   align-items: center;
   padding: 1rem 0;
 }
-.calculation__enter {
-  padding: 0.5rem calc(3rem - 2.01px);
-}
-.calculation__clear {
-  padding: 0.5rem 3rem;
+.calculation__button {
+  width: 10rem;
+  padding: 0.5rem 0;
 }
 
 .operation {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 15px;
-  gap: 15px;
+  -ms-grid-rows: 4rem 10px 4rem 10px 4rem 10px 4rem;
+  grid-template-rows: repeat(4, 4rem);
+  grid-gap: 10px;
+  gap: 10px;
 }
-.operation__button {
-  padding: 0.25rem 2rem;
+
+.operation > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.operation > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.operation > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+
+.operation > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+
+.operation > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.operation > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
+.operation > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+
+.operation > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+
+.operation > *:nth-child(9) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+
+.operation > *:nth-child(10) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+
+.operation > *:nth-child(11) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+}
+
+.operation > *:nth-child(12) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+}
+
+.operation > *:nth-child(13) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+}
+
+.operation > *:nth-child(14) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+}
+
+.operation > *:nth-child(15) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 5;
+}
+
+.operation > *:nth-child(16) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 7;
 }
 .operation__posneg {
   padding-right: 1rem;
