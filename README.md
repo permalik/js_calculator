@@ -1,1 +1,3 @@
-JS Calculator is a tool that allows users to do simple arithmetic calculations.
+js_calculator is a calculator application allowing basic arithmatic
+
+Available here: https://jscalculatorutility.netlify.app/
